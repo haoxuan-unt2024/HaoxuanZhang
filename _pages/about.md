@@ -52,6 +52,9 @@ I have published multiple papers in top-tier conferences and journals including 
 - [The evolving role of large language models in scientific innovation: evaluator, collaborator, and scientist](https://arxiv.org/abs/2507.11810), **Haoxuan Zhang**, Runan Li, Yi Zhang, Ting Xiao, Jiaying Chen, Jian Ding, Haihua Chen, **arXiv preprint, 2025**
 
 # 🎖 Honors and Awards
+- *2026* Graduate Student Research Award, University of North Texas
+- *2026* SIGIR Student Travel Grant, Special Interest Group on Information Retrieval
+- *2026* Graduate Student Travel Grant, University of North Texas
 - *2024.06* Excellent Master's Thesis, Central China Normal University
 - *2022* Excellent Graduate Student, Central China Normal University
 
