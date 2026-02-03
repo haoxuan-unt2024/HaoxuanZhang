@@ -19,7 +19,7 @@ redirect_from:
 
 I am a Ph.D. student in Information Science (concentrating on Data Science) at the University of North Texas, where I am a member of the Intelligent Data Engineering and Analytics (IDEA) Lab under the supervision of Prof. Haihua Chen and Prof. Ting Xiao. My research interests primarily focus on Innovation Measurement, Scientometrics, and AI4Science, with particular emphasis on leveraging large language models for scientific peer review and knowledge discovery.
 
-I have published multiple papers in top-tier conferences and journals including WWW, JCDL, ICDM, Journal of Informetrics, and Information Processing & Management with total <a href='https://scholar.google.com/citations?user=CfTZrTcAAAAJ'>google scholar citations <strong><span id='total_cit'>77+</span></strong></a> <a href='https://scholar.google.com/citations?user=CfTZrTcAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. My work bridges natural language processing, machine learning, and computational scientometrics to advance understanding of scientific innovation and peer review systems.
+I have published multiple papers in top-tier conferences and journals including WWW, JCDL, ICDM, Journal of Informetrics, and Information Processing & Management. My work bridges natural language processing, machine learning, and computational scientometrics to advance understanding of scientific innovation and peer review systems.
 
 <span class='anchor' id='-news'></span>
 
