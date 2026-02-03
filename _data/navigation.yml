@@ -2,22 +2,22 @@
 
 main:
   - title: "About Me"
-    url: "/#about-me"
+    url: "/HaoxuanZhang/#about-me"
     
   - title: "News"
-    url: "/#news"
+    url: "/HaoxuanZhang/#news"
     
   - title: "Publications"
-    url: "/#publications"
+    url: "/HaoxuanZhang/#publications"
     
   - title: "Honors and Awards"
-    url: "/#honors-and-awards"
+    url: "/HaoxuanZhang/#honors-and-awards"
     
   - title: "Educations"
-    url: "/#educations"
+    url: "/HaoxuanZhang/#educations"
     
   - title: "Professional Service"
-    url: "/#professional-service"
+    url: "/HaoxuanZhang/#professional-service"
     
   - title: "Teaching Experience"
-    url: "/#teaching-experience"
+    url: "/HaoxuanZhang/#teaching-experience"
