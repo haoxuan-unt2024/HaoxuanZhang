@@ -28,17 +28,6 @@ I have published multiple papers in top-tier conferences and journals including 
 - *2024.08*: &nbsp;🎉🎉 Started my Ph.D. journey at University of North Texas!
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">JCDL 2025</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549)
-
-**Haoxuan Zhang**, Runan Li, Sai Shrestha, Sai Hemanth Mamidala, Rakshit Putta, Aniket Kumar Aggarwal, Ting Xiao, Jian Ding, Haihua Chen
-
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=CfTZrTcAAAAJ&citation_for_view=CfTZrTcAAAAJ:Tyk-4Ss8FVUC) <strong><span class='show_paper_citations' data='CfTZrTcAAAAJ:Tyk-4Ss8FVUC'></span></strong>
-- Accepted at ACM/IEEE Joint Conference on Digital Libraries (JCDL) 2025
-</div>
-</div>
 
 ## Conference Papers
 
