@@ -101,25 +101,3 @@ I have published multiple papers in top-tier conferences and journals including 
 <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=DHH2NW1YMQn4OvXrg9HVDfkNQQZiU-Qrx_gvGQzBxCU&cl=ffffff&w=a"></script>
 
 
-<script>
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    document.querySelectorAll('a').forEach(function(link) {
-      var href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        link.setAttribute('target', '_self');
-        link.onclick = function(e) {
-          e.preventDefault();
-          var target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({behavior: 'smooth'});
-            history.pushState(null, null, href);
-          }
-          return false;
-        };
-      }
-    });
-  }, 500);
-});
-</script>
-
