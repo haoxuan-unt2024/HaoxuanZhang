@@ -99,3 +99,16 @@ I have published multiple papers in top-tier conferences and journals including 
 ---
 
 <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=DHH2NW1YMQn4OvXrg9HVDfkNQQZiU-Qrx_gvGQzBxCU&cl=ffffff&w=a"></script>
+
+
+<script>
+document.querySelectorAll('a[href*="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    if (this.hash) {
+      e.preventDefault();
+      document.querySelector(this.hash).scrollIntoView({behavior: 'smooth'});
+      history.pushState(null, null, this.hash);
+    }
+  });
+});
+</script>
