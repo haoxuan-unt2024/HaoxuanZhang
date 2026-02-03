@@ -26,30 +26,33 @@ I have published multiple papers in top-tier conferences and journals including 
 - *2026.02*: &nbsp;🎉🎉 One Paper accepted at WWW 2026!
 - *2025.02*: &nbsp;🎉🎉 Two papers accepted at JCDL 2025 and ICDM 2025!
 - *2024.08*: &nbsp;🎉🎉 Started my Ph.D. journey at University of North Texas!
+
+
 # 📝 Publications 
 
 
 ## Conference Papers
 
-- [AdaQE-CG: Adaptive Query Expansion for Web-Scale Generative AI Model and Data Card Generation](https://scholar.google.com/citations?user=CfTZrTcAAAAJ), **Haoxuan Zhang**, Ruochi Li, Zhenni Liang, Mehri Sattari, Phat Vo, Collin Qu, Ting Xiao, Junhua Ding, Yang Zhang, Haihua Chen, **WWW 2026**
+- [AdaQE-CG: Adaptive Query Expansion for Web-Scale Generative AI Model and Data Card Generation](https://scholar.google.com/citations?user=CfTZrTcAAAAJ), **Zhang, H.**, Li, R., Liang, Z., Sattari, M., Vo, P., Qu, C., Xiao, T., Ding, J., Zhang, Y., & Chen, H., **WWW 2026**
 
-- [ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549), **Haoxuan Zhang**, Runan Li, Sai Shrestha, Sai Hemanth Mamidala, Rakshit Putta, Aniket Kumar Aggarwal, Ting Xiao, Jian Ding, Haihua Chen, **JCDL 2025**
+- [ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549), **Zhang, H.**, Li, R., Xiao, T., Ding, J., & Chen, H., **JCDL 2025**
 
-- [Unveiling the Merits and Defects of LLMs in Automatic Review Generation for Scientific Papers](https://arxiv.org/abs/2509.19326), Runan Li, **Haoxuan Zhang**, Edward Gehringer, Ting Xiao, Jian Ding, Haihua Chen, **ICDM 2025**
+- [Unveiling the Merits and Defects of LLMs in Automatic Review Generation for Scientific Papers](https://arxiv.org/abs/2509.19326), Li, R., **Zhang, H.**, Xiao, T., Ding, J., & Chen, H., **ICDM 2025**
 
 ## Journal Papers
 
-- [IBID-CCT: A novel model for interdisciplinary breakthrough innovation detection based on the cusp catastrophe theory](https://doi.org/10.1016/j.ipm.2025.104121), Zijian Wang, Ningning Wang, **Haoxuan Zhang**, Zeyuan Wang, Zihan Wang, Jian Ding, Haihua Chen, **Information Processing & Management, 2025**
+- [IBID-CCT: A novel model for interdisciplinary breakthrough innovation detection based on the cusp catastrophe theory](https://doi.org/10.1016/j.ipm.2025.104121), Wang, Z., Wang, N., **Zhang, H.**, Wang, Z., Wang, Z., Ding, J., & Chen, H., **Information Processing & Management, 2025**
 
-- [An effective framework for measuring the novelty of scientific articles through integrated topic modeling and cloud model](https://doi.org/10.1016/j.joi.2024.101587), Zijian Wang, **Haoxuan Zhang**, Jiaying Chen, Haihua Chen, **Journal of Informetrics, 2024**
+- [An effective framework for measuring the novelty of scientific articles through integrated topic modeling and cloud model](https://doi.org/10.1016/j.joi.2024.101587), Wang, Z., **Zhang, H.**, Chen, J., & Chen, H., **Journal of Informetrics, 2024**
 
-- [Content-based quality evaluation of scientific papers using coarse feature and knowledge entity network](https://doi.org/10.1016/j.jksuci.2024.102119), Zijian Wang, **Haoxuan Zhang**, Haihua Chen, Yunfeng Feng, Jian Ding, **Journal of King Saud University - Computer and Information Sciences, 2024**
+- [Content-based quality evaluation of scientific papers using coarse feature and knowledge entity network](https://doi.org/10.1016/j.jksuci.2024.102119), Wang, Z., **Zhang, H.**, Chen, H., Feng, Y., & Ding, J., **Journal of King Saud University - Computer and Information Sciences, 2024**
 
-- [Exploring and evaluating the index for interdisciplinary breakthrough innovation detection](https://doi.org/10.1108/el-06-2023-0141), Zijian Wang, Xuelian Qiao, Jiaying Chen, Lingfei Li, **Haoxuan Zhang**, Jian Ding, Haihua Chen, **The Electronic Library, 2024**
+- [Exploring and evaluating the index for interdisciplinary breakthrough innovation detection](https://doi.org/10.1108/el-06-2023-0141), Wang, Z., Qiao, X., Chen, J., Li, L., **Zhang, H.**, Ding, J., & Chen, H., **The Electronic Library, 2024**
 
 ## Preprints
 
-- [The evolving role of large language models in scientific innovation: evaluator, collaborator, and scientist](https://arxiv.org/abs/2507.11810), **Haoxuan Zhang**, Runan Li, Yi Zhang, Ting Xiao, Jiaying Chen, Jian Ding, Haihua Chen, **arXiv preprint, 2025**
+- [The evolving role of large language models in scientific innovation: evaluator, collaborator, and scientist](https://arxiv.org/abs/2507.11810), **Zhang, H.**, Li, R., Zhang, Y., Xiao, T., Chen, J., Ding, J., & Chen, H., **arXiv preprint, 2025**
+
 
 # 🎖 Honors and Awards
 - *2026* Graduate Student Research Award, University of North Texas
