@@ -17,42 +17,79 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+I am a Ph.D. student in Information Science (concentrating on Data Science) at the University of North Texas, where I am a member of the Intelligent Data Engineering and Analytics (IDEA) Lab under the supervision of Prof. Haihua Chen and Prof. Ting Xiao. My research interests primarily focus on Innovation Measurement, Scientometrics, and AI4Science, with particular emphasis on leveraging large language models for scientific peer review and knowledge discovery.
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+I have published multiple papers in top-tier conferences and journals including JCDL, ICDM, Journal of Informetrics, and Information Processing & Management with total <a href='https://scholar.google.com/citations?user=CfTZrTcAAAAJ'>google scholar citations <strong><span id='total_cit'>77+</span></strong></a> <a href='https://scholar.google.com/citations?user=CfTZrTcAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. My work bridges natural language processing, machine learning, and computational scientometrics to advance understanding of scientific innovation and peer review systems.
 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-
+- *2026.02*: &nbsp;🎉🎉 Paper on adaptive query expansion for AI model card generation accepted at WWW 2026!
+- *2025.02*: &nbsp;🎉🎉 Two papers accepted at JCDL 2025 and ICDM 2025!
+- *2024.08*: &nbsp;🎉🎉 Started my Ph.D. journey at University of North Texas!
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">JCDL 2025</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+[ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549)
 
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+**Haoxuan Zhang**, Runan Li, Sai Shrestha, Sai Hemanth Mamidala, Rakshit Putta, Aniket Kumar Aggarwal, Ting Xiao, Jian Ding, Haihua Chen
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=CfTZrTcAAAAJ&citation_for_view=CfTZrTcAAAAJ:Tyk-4Ss8FVUC) <strong><span class='show_paper_citations' data='CfTZrTcAAAAJ:Tyk-4Ss8FVUC'></span></strong>
+- Accepted at ACM/IEEE Joint Conference on Digital Libraries (JCDL) 2025
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+## Conference Papers
+
+- [AdaQE-CG: Adaptive Query Expansion for Web-Scale Generative AI Model and Data Card Generation](https://scholar.google.com/citations?user=CfTZrTcAAAAJ), **Haoxuan Zhang**, Ruochi Li, Zhenni Liang, Mehri Sattari, Phat Vo, Collin Qu, Ting Xiao, Junhua Ding, Yang Zhang, Haihua Chen, **WWW 2026**
+
+- [ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549), **Haoxuan Zhang**, Runan Li, Sai Shrestha, Sai Hemanth Mamidala, Rakshit Putta, Aniket Kumar Aggarwal, Ting Xiao, Jian Ding, Haihua Chen, **JCDL 2025**
+
+- [Unveiling the Merits and Defects of LLMs in Automatic Review Generation for Scientific Papers](https://arxiv.org/abs/2509.19326), Runan Li, **Haoxuan Zhang**, Edward Gehringer, Ting Xiao, Jian Ding, Haihua Chen, **ICDM 2025**
+
+## Journal Papers
+
+- [IBID-CCT: A novel model for interdisciplinary breakthrough innovation detection based on the cusp catastrophe theory](https://doi.org/10.1016/j.ipm.2025.104121), Zijian Wang, Ningning Wang, **Haoxuan Zhang**, Zeyuan Wang, Zihan Wang, Jian Ding, Haihua Chen, **Information Processing & Management, 2025**
+
+- [An effective framework for measuring the novelty of scientific articles through integrated topic modeling and cloud model](https://doi.org/10.1016/j.joi.2024.101587), Zijian Wang, **Haoxuan Zhang**, Jiaying Chen, Haihua Chen, **Journal of Informetrics, 2024**
+
+- [Content-based quality evaluation of scientific papers using coarse feature and knowledge entity network](https://doi.org/10.1016/j.jksuci.2024.102119), Zijian Wang, **Haoxuan Zhang**, Haihua Chen, Yunfeng Feng, Jian Ding, **Journal of King Saud University - Computer and Information Sciences, 2024**
+
+- [Exploring and evaluating the index for interdisciplinary breakthrough innovation detection](https://doi.org/10.1108/el-06-2023-0141), Zijian Wang, Xuelian Qiao, Jiaying Chen, Lingfei Li, **Haoxuan Zhang**, Jian Ding, Haihua Chen, **The Electronic Library, 2024**
+
+## Preprints
+
+- [The evolving role of large language models in scientific innovation: evaluator, collaborator, and scientist](https://arxiv.org/abs/2507.11810), **Haoxuan Zhang**, Runan Li, Yi Zhang, Ting Xiao, Jiaying Chen, Jian Ding, Haihua Chen, **arXiv preprint, 2025**
 
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2024.06* Excellent Master's Thesis, Central China Normal University
+- *2022* Excellent Graduate Student, Central China Normal University
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2024.08 - present*, Ph.D. in Information Science (Data Science), University of North Texas, Denton, USA
+- *2021.09 - 2024.06*, M.S. in Library and Information Science, Central China Normal University, Wuhan, China
+- *2017.09 - 2021.06*, B.S. in Electronic Business, Central China Normal University, Wuhan, China
 
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
+# 💼 Professional Service
 
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+## Conference Organizing Committee
+- Website Chair, 1st International Workshop on Data Mining and AI for Law (ICDM 2025)
+- Website Chair, 1st Integrated Approaches to Testing Data-Centric AI Systems: Methods, Metrics, and Benchmarks (AIxSE 2025)
+- Website Chair, 2nd Workshop on Innovation Measurement for Scientific Communication (IMSC) in the Era of Big Data (JCDL 2024)
+- Website Chair, 1st Workshop on Utilizing AI/ML to Enhance Information Extraction, Organization, and Retrieval from Large-scale Archival Collections (JCDL 2024)
+- Website Chair, 1st Workshop on Innovation Measurement for Scientific Communication (IMSC) in the Era of Big Data (JCDL 2023)
+
+## Journal Reviewer
+- Humanities and Social Sciences Communications (2025 - present)
+- Journal of the Association for Information Science and Technology (2025 - present)
+- The Electronic Library (2024 - present)
+- Data Intelligence (2024 - present)
+
+## Conference Reviewer
+- ICDM 2025, EMNLP 2025, ACL 2025, IEEE QRS 2025, IEEE AITest 2025
+- IEEE BigData 2025, JCDL 2025 (PC member - Resources Track), JCDL 2024
+
+# 💻 Teaching Experience
+- *2025.05 - 2025.07*, Research Assistant, UNT AI/CS Summer Research Program
+- *2024.08 - present*, Teaching Assistant, DTSC 5502 Section 401 - Principles and Techniques for Data Science (Fall 2024, Spring 2025, Fall 2025)
