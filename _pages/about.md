@@ -102,13 +102,24 @@ I have published multiple papers in top-tier conferences and journals including 
 
 
 <script>
-document.querySelectorAll('a[href*="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    if (this.hash) {
-      e.preventDefault();
-      document.querySelector(this.hash).scrollIntoView({behavior: 'smooth'});
-      history.pushState(null, null, this.hash);
-    }
-  });
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelectorAll('a').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        link.setAttribute('target', '_self');
+        link.onclick = function(e) {
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({behavior: 'smooth'});
+            history.pushState(null, null, href);
+          }
+          return false;
+        };
+      }
+    });
+  }, 500);
 });
 </script>
+
