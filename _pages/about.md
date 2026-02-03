@@ -15,22 +15,22 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
+<a name="about-me"></a>
 # About Me
-{: #about-me}
 
 I am a Ph.D. student in Information Science (concentrating on Data Science) at the University of North Texas, where I am a member of the Intelligent Data Engineering and Analytics (IDEA) Lab under the supervision of Prof. Haihua Chen and Prof. Ting Xiao. My research interests primarily focus on Innovation Measurement, Scientometrics, and AI4Science, with particular emphasis on leveraging large language models for scientific peer review and knowledge discovery.
 
 I have published multiple papers in top-tier conferences and journals including WWW, JCDL, ICDM, Journal of Informetrics, and Information Processing & Management. My work bridges natural language processing, machine learning, and computational scientometrics to advance understanding of scientific innovation and peer review systems.
 
+<a name="news"></a>
 # 🔥 News
-{: #news}
 
 - *2026.02*: &nbsp;🎉🎉 One Paper accepted at WWW 2026!
 - *2025.02*: &nbsp;🎉🎉 Two papers accepted at JCDL 2025 and ICDM 2025!
 - *2024.08*: &nbsp;🎉🎉 Started my Ph.D. journey at University of North Texas!
 
+<a name="publications"></a>
 # 📝 Publications
-{: #publications}
 
 ## Conference Papers
 
@@ -54,8 +54,8 @@ I have published multiple papers in top-tier conferences and journals including 
 
 - [The evolving role of large language models in scientific innovation: evaluator, collaborator, and scientist](https://arxiv.org/abs/2507.11810), **Zhang, H.**, Li, R., Zhang, Y., Xiao, T., Chen, J., Ding, J., & Chen, H., **arXiv preprint, 2025**
 
+<a name="honors-and-awards"></a>
 # 🎖 Honors and Awards
-{: #honors-and-awards}
 
 - *2026* Graduate Student Research Award, University of North Texas
 - *2026* SIGIR Student Travel Grant, Special Interest Group on Information Retrieval
@@ -63,15 +63,15 @@ I have published multiple papers in top-tier conferences and journals including 
 - *2024.06* Excellent Master's Thesis, Central China Normal University
 - *2022* Excellent Graduate Student, Central China Normal University
 
+<a name="educations"></a>
 # 📖 Educations
-{: #educations}
 
 - *2024.08 - present*, Ph.D. in Information Science (Data Science), University of North Texas, Denton, USA
 - *2021.09 - 2024.06*, M.S. in Library and Information Science, Central China Normal University, Wuhan, China
 - *2017.09 - 2021.06*, B.S. in Electronic Business, Central China Normal University, Wuhan, China
 
+<a name="professional-service"></a>
 # 💼 Professional Service
-{: #professional-service}
 
 ## Conference Organizing Committee
 - Website Chair, 1st International Workshop on Data Mining and AI for Law (ICDM 2025)
@@ -90,8 +90,8 @@ I have published multiple papers in top-tier conferences and journals including 
 - ICDM 2025, EMNLP 2025, ACL 2025, IEEE QRS 2025, IEEE AITest 2025
 - IEEE BigData 2025, JCDL 2025 (PC member - Resources Track), JCDL 2024
 
+<a name="teaching-experience"></a>
 # 💻 Teaching Experience
-{: #teaching-experience}
 
 - *2025.05 - 2025.07*, Research Assistant, UNT AI/CS Summer Research Program
 - *2024.08 - present*, Teaching Assistant, DTSC 5502 Section 401 - Principles and Techniques for Data Science (Fall 2024, Spring 2025, Fall 2025, Spring 2026)
