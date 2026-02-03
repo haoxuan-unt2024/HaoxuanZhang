@@ -87,4 +87,4 @@ I have published multiple papers in top-tier conferences and journals including 
 
 # 💻 Teaching Experience
 - *2025.05 - 2025.07*, Research Assistant, UNT AI/CS Summer Research Program
-- *2024.08 - present*, Teaching Assistant, DTSC 5502 Section 401 - Principles and Techniques for Data Science (Fall 2024, Spring 2025, Fall 2025)
+- *2024.08 - present*, Teaching Assistant, DTSC 5502 Section 401 - Principles and Techniques for Data Science (Fall 2024, Spring 2025, Fall 2025, Spring 2026)
