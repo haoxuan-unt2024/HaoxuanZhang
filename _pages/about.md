@@ -23,7 +23,7 @@ I have published multiple papers in top-tier conferences and journals including 
 
 
 # 🔥 News
-- *2026.02*: &nbsp;🎉🎉 Paper on adaptive query expansion for AI model card generation accepted at WWW 2026!
+- *2026.02*: &nbsp;🎉🎉 One Paper accepted at WWW 2026!
 - *2025.02*: &nbsp;🎉🎉 Two papers accepted at JCDL 2025 and ICDM 2025!
 - *2024.08*: &nbsp;🎉🎉 Started my Ph.D. journey at University of North Texas!
 # 📝 Publications 
