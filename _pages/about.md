@@ -21,14 +21,14 @@ I am a Ph.D. student in Information Science (concentrating on Data Science) at t
 
 I have published multiple papers in top-tier conferences and journals including WWW, JCDL, ICDM, Journal of Informetrics, and Information Processing & Management. My work bridges natural language processing, machine learning, and computational scientometrics to advance understanding of scientific innovation and peer review systems.
 
-<span class='anchor' id='-news'></span>
+<span class='anchor' id='news'></span>
 
 # 🔥 News
 - *2026.02*: &nbsp;🎉🎉 One Paper accepted at WWW 2026!
 - *2025.02*: &nbsp;🎉🎉 Two papers accepted at JCDL 2025 and ICDM 2025!
 - *2024.08*: &nbsp;🎉🎉 Started my Ph.D. journey at University of North Texas!
 
-<span class='anchor' id='-publications'></span>
+<span class='anchor' id='publications'></span>
 
 # 📝 Publications 
 
@@ -54,7 +54,7 @@ I have published multiple papers in top-tier conferences and journals including 
 
 - [The evolving role of large language models in scientific innovation: evaluator, collaborator, and scientist](https://arxiv.org/abs/2507.11810), **Zhang, H.**, Li, R., Zhang, Y., Xiao, T., Chen, J., Ding, J., & Chen, H., **arXiv preprint, 2025**
 
-<span class='anchor' id='-honors-and-awards'></span>
+<span class='anchor' id='honors-and-awards'></span>
 
 # 🎖 Honors and Awards
 - *2026* Graduate Student Research Award, University of North Texas
@@ -63,14 +63,14 @@ I have published multiple papers in top-tier conferences and journals including 
 - *2024.06* Excellent Master's Thesis, Central China Normal University
 - *2022* Excellent Graduate Student, Central China Normal University
 
-<span class='anchor' id='-educations'></span>
+<span class='anchor' id='educations'></span>
 
 # 📖 Educations
 - *2024.08 - present*, Ph.D. in Information Science (Data Science), University of North Texas, Denton, USA
 - *2021.09 - 2024.06*, M.S. in Library and Information Science, Central China Normal University, Wuhan, China
 - *2017.09 - 2021.06*, B.S. in Electronic Business, Central China Normal University, Wuhan, China
 
-<span class='anchor' id='-professional-service'></span>
+<span class='anchor' id='professional-service'></span>
 
 # 💼 Professional Service
 
@@ -91,11 +91,12 @@ I have published multiple papers in top-tier conferences and journals including 
 - ICDM 2025, EMNLP 2025, ACL 2025, IEEE QRS 2025, IEEE AITest 2025
 - IEEE BigData 2025, JCDL 2025 (PC member - Resources Track), JCDL 2024
 
-<span class='anchor' id='-teaching-experience'></span>
+<span class='anchor' id='teaching-experience'></span>
 
 # 💻 Teaching Experience
 - *2025.05 - 2025.07*, Research Assistant, UNT AI/CS Summer Research Program
 - *2024.08 - present*, Teaching Assistant, DTSC 5502 Section 401 - Principles and Techniques for Data Science (Fall 2024, Spring 2025, Fall 2025, Spring 2026)
+
 
 
 <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=DHH2NW1YMQn4OvXrg9HVDfkNQQZiU-Qrx_gvGQzBxCU&cl=ffffff&w=a"></script>
