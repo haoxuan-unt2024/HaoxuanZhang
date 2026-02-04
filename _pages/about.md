@@ -57,9 +57,9 @@ I have published multiple papers in top-tier conferences and journals including 
 <a name="honors-and-awards"></a>
 # 🎖 Honors and Awards
 
-- *2026* Graduate Student Research Award, University of North Texas
-- *2026* SIGIR Student Travel Grant, Special Interest Group on Information Retrieval
-- *2026* Graduate Student Travel Grant, University of North Texas
+- *2025* Graduate Student Research Award, University of North Texas
+- *2025* SIGIR Student Travel Grant, Special Interest Group on Information Retrieval
+- *2025* Graduate Student Travel Grant, University of North Texas
 - *2024.06* Excellent Master's Thesis, Central China Normal University
 - *2022* Excellent Graduate Student, Central China Normal University
 
