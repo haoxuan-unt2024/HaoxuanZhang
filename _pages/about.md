@@ -98,6 +98,11 @@ I have published multiple papers in top-tier conferences and journals including 
 
 ---
 
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=DHH2NW1YMQn4OvXrg9HVDfkNQQZiU-Qrx_gvGQzBxCU&cl=ffffff&w=a"></script>
+<div style="width: 300px; margin: 0 auto;">
+  <script type="text/javascript" id="clustrmaps" 
+    src="//clustrmaps.com/map_v2.js?d=DHH2NW1YMQn4OvXrg9HVDfkNQQZiU-Qrx_gvGQzBxCU&cl=ffffff&w=a">
+  </script>
+</div>
+
 
 
