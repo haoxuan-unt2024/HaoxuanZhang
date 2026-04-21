@@ -34,7 +34,7 @@ I have published multiple papers in top-tier conferences and journals including 
 
 ## Conference Papers
 
-- [AdaQE-CG: Adaptive Query Expansion for Web-Scale Generative AI Model and Data Card Generation](https://scholar.google.com/citations?user=CfTZrTcAAAAJ), **Zhang, H.**, Li, R., Liang, Z., Sattari, M., Vo, P., Qu, C., Xiao, T., Ding, J., Zhang, Y., & Chen, H., **WWW 2026**
+- [AdaQE-CG: Adaptive Query Expansion for Web-Scale Generative AI Model and Data Card Generation](https://dl.acm.org/doi/abs/10.1145/3774904.3792685), **Zhang, H.**, Li, R., Liang, Z., Sattari, M., Vo, P., Qu, C., Xiao, T., Ding, J., Zhang, Y., & Chen, H., **WWW 2026**
 
 - [ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549), **Zhang, H.**, Li, R., Xiao, T., Ding, J., & Chen, H., **JCDL 2025**
 
