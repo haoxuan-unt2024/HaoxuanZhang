@@ -77,6 +77,7 @@ I have published multiple papers in top-tier conferences and journals including 
 # 💼 Professional Service
 
 ## Conference Organizing Committee
+- Website Chair, ACM/IEEE Joint Conference on Digital Libraries (JCDL 2026).
 - Website Chair, 1st International Workshop on Data Mining and AI for Law (ICDM 2025)
 - Website Chair, 1st Integrated Approaches to Testing Data-Centric AI Systems: Methods, Metrics, and Benchmarks (AIxSE 2025)
 - Website Chair, 2nd Workshop on Innovation Measurement for Scientific Communication (IMSC) in the Era of Big Data (JCDL 2024)
@@ -84,14 +85,15 @@ I have published multiple papers in top-tier conferences and journals including 
 - Website Chair, 1st Workshop on Innovation Measurement for Scientific Communication (IMSC) in the Era of Big Data (JCDL 2023)
 
 ## Journal Reviewer
+- Information Processing & Management (2026 – Present)
+- Scientometrics (2026 – Present)
 - Humanities and Social Sciences Communications (2025 - present)
 - Journal of the Association for Information Science and Technology (2025 - present)
 - The Electronic Library (2024 - present)
 - Data Intelligence (2024 - present)
 
 ## Conference Reviewer
-- ICDM 2025, EMNLP 2025, ACL 2025, IEEE QRS 2025, IEEE AITest 2025
-- IEEE BigData 2025, JCDL 2025 (PC member - Resources Track), JCDL 2024
+- ICDM, EMNLP, ACL, IEEE QRS, IEEE AITest, ACM/IEEE JCDL, IEEE BigData
 
 <a name="teaching-experience"></a>
 # 💻 Teaching Experience
