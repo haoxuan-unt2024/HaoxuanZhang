@@ -33,15 +33,15 @@ I have published multiple papers in top-tier conferences and journals including 
 # 📝 Publications
 
 ## Conference Papers
-- [MetaGAI: A Large-Scale and High-Quality Benchmark for Generative AI Model and Data Card Generation](https://arxiv.org/abs/2604.23539), **Zhang, H.**, Li, R., Zhang, Y., Liang, Z., Ding, J., Xiao, T., & Chen, H., **EMNLP 2026**
-
-- Puzzles to Paradigms: A Survey of Human--Agent Collaboration in Scientific Innovation, Liang, Z., **Zhang, H.**, Chen, H., Xiao, T., Ding, J., & Zhang, Y., **EMNLP 2026**
+- [MetaGAI: A Large-Scale and High-Quality Benchmark for Generative AI Model and Data Card Generation](https://arxiv.org/abs/2604.23539), **Zhang, H.**, Li, R., Zhang, Y., Liang, Z., Ding, J., Xiao, T., & Chen, H., _Findings of_ **EMNLP 2026**
+f
+- Puzzles to Paradigms: A Survey of Human--Agent Collaboration in Scientific Innovation, Liang, Z., **Zhang, H.**, Chen, H., Xiao, T., Ding, J., & Zhang, Y.,  _Findings of_ **EMNLP 2026**
   
 - [AdaQE-CG: Adaptive Query Expansion for Web-Scale Generative AI Model and Data Card Generation](https://dl.acm.org/doi/abs/10.1145/3774904.3792685), **Zhang, H.**, Li, R., Liang, Z., Sattari, M., Vo, P., Qu, C., Xiao, T., Ding, J., Zhang, Y., & Chen, H., **WWW 2026**
 
 - [ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549), **Zhang, H.**, Li, R., Xiao, T., Ding, J., & Chen, H., **JCDL 2025**
 
-- [Unveiling the Merits and Defects of LLMs in Automatic Review Generation for Scientific Papers](https://arxiv.org/abs/2509.19326), Li, R., **Zhang, H.**, Xiao, T., Ding, J., & Chen, H., **ICDM 2025**
+- [Unveiling the Merits and Defects of LLMs in Automatic Review Generation for Scientific Papers](https://arxiv.org/abs/2509.19326), Li, R., **Zhang, H.**, Xiao, T., Ding, J., & Chen, H., **ICDM 2025 (Best Poster paper)**
 
 ## Journal Papers
 
