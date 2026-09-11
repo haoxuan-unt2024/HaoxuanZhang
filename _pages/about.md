@@ -85,6 +85,7 @@ I have published multiple papers in top-tier conferences and journals including 
 - Website Chair, 1st Workshop on Innovation Measurement for Scientific Communication (IMSC) in the Era of Big Data (JCDL 2023)
 
 ## Journal Reviewer
+- Telematics and Informatics (2026 – Present)
 - Information Processing & Management (2026 – Present)
 - Scientometrics (2026 – Present)
 - Humanities and Social Sciences Communications (2025 - present)
