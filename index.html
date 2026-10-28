@@ -141,7 +141,22 @@ p { margin: 0; }
 .bio { grid-column: 2; }
 .bio p { max-width: 64ch; margin-bottom: .9rem; }
 .bio p:last-child { margin-bottom: 0; }
-.bio .lede { font-size: 1.25rem; line-height: 1.55; margin-bottom: 1rem; }
+.lede-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 282px;
+  column-gap: 2rem;
+  align-items: start;
+  margin-bottom: 1.4rem;
+}
+.bio .lede { max-width: none; margin: 0; font-size: 1.6rem; line-height: 1.35; letter-spacing: -.005em; }
+.sayings { border-left: 2px solid var(--accent); padding-left: 1rem; display: grid; gap: .95rem; }
+.saying { margin: 0; }
+.saying blockquote { margin: 0; font-size: 1.0625rem; line-height: 1.45; color: var(--ink); }
+.saying blockquote[lang="zh"] { font-family: "Songti SC", STSong, "Noto Serif SC", "Source Han Serif SC", "Noto Serif CJK SC", var(--serif); font-size: 1rem; letter-spacing: 0; }
+.saying blockquote[lang="grc"] { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, var(--serif); }
+.bio .saying .tr { max-width: none; margin: .15rem 0 0; font-size: .875rem; line-height: 1.4; font-style: italic; color: var(--muted); }
+.saying figcaption { margin-top: .2rem; font-size: .8125rem; color: var(--muted); }
+.saying cite { font-style: italic; }
 
 
 /* ---------- Cards ---------- */
@@ -313,7 +328,7 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
   --cursor-text: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M12 5v14M8.5 4.5h7M8.5 19.5h7%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%224.2%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M12 5v14M8.5 4.5h7M8.5 19.5h7%22 fill=%22none%22 stroke=%22%23008542%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E%3C/svg%3E") 12 12, text;
 }
 html { cursor: var(--cursor-arrow); }
-.bio p, .role, .authors, .where, .entry p, .sub, .lead, .pubs-theme, .paper-meta, .bib pre { cursor: var(--cursor-text); }
+.bio p, .sayings, .role, .authors, .where, .entry p, .sub, .lead, .pubs-theme, .paper-meta, .bib pre { cursor: var(--cursor-text); }
 a, button, summary, .bib-btn, .copy { cursor: var(--cursor-link); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -346,7 +361,8 @@ a, button, summary, .bib-btn, .copy { cursor: var(--cursor-link); }
   .ident h1 { font-size: 2.1rem; margin-bottom: .35rem; }
   .role { font-size: .9375rem; }
   .bio { grid-column: 1 / -1; }
-  .bio .lede { font-size: 1.125rem; }
+  .lede-row { grid-template-columns: minmax(0, 1fr); row-gap: 1.1rem; }
+  .bio .lede { font-size: 1.3rem; }
 
   .cards { margin-top: 2.5rem; }
   .card > summary { flex-wrap: wrap; row-gap: .1rem; }
@@ -409,7 +425,21 @@ a, button, summary, .bib-btn, .copy { cursor: var(--cursor-link); }
       </div>
 
       <div class="bio">
-        <p class="lede">I study how knowledge is produced and evaluated in the AI era.</p>
+        <div class="lede-row">
+          <p class="lede">I study how knowledge is produced and evaluated in the AI era.</p>
+          <aside class="sayings" aria-label="Related sayings">
+            <figure class="saying">
+              <blockquote lang="zh">博学之，审问之，慎思之，<br>明辨之，笃行之。</blockquote>
+              <p class="tr">Study it broadly, inquire into it closely, reflect on it carefully, discern it clearly, and practice it earnestly.</p>
+              <figcaption><cite>Zhongyong</cite> (The Doctrine of the Mean), ch. 20</figcaption>
+            </figure>
+            <figure class="saying">
+              <blockquote lang="grc">τὴν μὲν μετὰ λόγου ἀληθῆ δόξαν ἐπιστήμην εἶναι, τὴν δὲ ἄλογον ἐκτὸς ἐπιστήμης.</blockquote>
+              <p class="tr">True belief accompanied by an account is knowledge; without an account, it falls outside knowledge.</p>
+              <figcaption>Plato, <cite>Theaetetus</cite> 201c–d</figcaption>
+            </figure>
+          </aside>
+        </div>
         <p>Research output increasingly takes the form of AI models and datasets, and large language models increasingly write the summaries and reviews that science relies on. My work addresses two questions this raises. <a href="#publications" data-filter="documentation">AI documentation</a> asks how this knowledge is recorded: I build benchmarks and methods for generating model and data cards that state what a model or dataset is, how it was built, and where it falls short. <a href="#publications" data-filter="evaluation">Knowledge evaluation</a> asks how its quality is judged: I measure novelty and breakthrough innovation in science and test whether LLM-generated reviews and summaries can be trusted. The two depend on each other. Without documentation, AI work cannot be evaluated, compared, or reused; and documentation written by LLMs is itself knowledge that has to be evaluated.</p>
         <p>I am a member of the <a href="https://www.idealab-coi.com">Intelligent Data Engineering and Analytics (IDEA) Lab</a>, advised by Prof. Haihua Chen, Prof. Ting Xiao, and Prof. Yang Zhang.</p>
       </div>
