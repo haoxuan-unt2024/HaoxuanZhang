@@ -9,8 +9,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Haoxuan Zhang">
 <meta property="og:description" content="Ph.D. student at the University of North Texas working on innovation measurement, scientometrics, and LLMs for scientific peer review.">
-<link rel="icon" type="image/png" href="images/we.png?v=2">
-<link rel="apple-touch-icon" href="images/we.png?v=2">
+<link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral+SC:wght@500;600&display=swap">
@@ -26,23 +25,24 @@
   "knowsAbout": ["Innovation measurement", "Scientometrics", "AI for Science", "Scientific peer review", "Large language models"],
   "sameAs": [
     "https://scholar.google.com/citations?user=CfTZrTcAAAAJ",
-    "https://github.com/zhanghaoxuan1999"
+    "https://openreview.net/profile?id=~Haoxuan_Zhang3"
   ]
 }
 </script>
 <style>
 :root {
-  --paper: #F3F6F4;
+  --paper: #EEF6F1;
   --card: #FFFFFF;
-  --hover: #F7FAF8;
-  --ink: #1B2420;
-  --muted: #56645E;
-  --faint: #8D9993;
-  --rule: #DCE3DF;
-  --accent: #00703C;
-  --accent-soft: #E2F0E7;
-  --award: #8A5A00;
-    --code-bg: #F1F4F2;
+  --hover: #F3FAF6;
+  --ink: #13201A;
+  --muted: #4A5A52;
+  --faint: #8FA398;
+  --rule: #D2E3D8;
+  --accent: #008542;
+  --accent-deep: #006B35;
+  --accent-soft: #DDF2E5;
+  --award: #A66A00;
+  --code-bg: #F2F8F4;
 
   --serif: "Spectral", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sc: "Spectral SC", "Spectral", "Palatino Linotype", Palatino, Georgia, serif;
@@ -52,22 +52,6 @@
   --g: 112px;    /* margin gutter for dates, keys, venues */
   --gap: 28px;
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #111513;
-    --card: #181E1B;
-    --hover: #1D2421;
-    --ink: #E3E9E5;
-    --muted: #A3B0AA;
-    --faint: #6F7C76;
-    --rule: #29322E;
-    --accent: #6CCB97;
-    --accent-soft: #1E3529;
-    --award: #E2BB5E;
-    --code-bg: #1F2623;
-    color-scheme: dark;
-  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -94,7 +78,7 @@ a {
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: .18em;
-  text-decoration-color: var(--rule);
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
 }
 a:hover { text-decoration-color: currentColor; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
@@ -139,8 +123,9 @@ p { margin: 0; }
 .portrait {
   width: 112px; aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid var(--rule);
+  border-radius: 6px;
+  border: 3px solid var(--card);
+  box-shadow: 0 0 0 1px var(--rule);
   background: var(--card);
 }
 .ident { grid-column: 2; grid-row: 1; align-self: end; }
@@ -184,9 +169,11 @@ p { margin: 0; }
 }
 .card > summary::-webkit-details-marker { display: none; }
 .card > summary:hover { background: var(--hover); }
+.card[open] { box-shadow: inset 4px 0 0 var(--accent); }
 .card[open] > summary { border-radius: 12px 12px 0 0; }
 .card > summary h2 {
   margin: 0; flex: none;
+  color: var(--accent-deep);
   font-family: var(--sc); font-weight: 600;
   font-size: 1.3rem; line-height: 1.25; letter-spacing: .015em;
 }
@@ -194,8 +181,8 @@ p { margin: 0; }
 .chev {
   flex: none; align-self: center;
   width: 9px; height: 9px;
-  border-right: 1.5px solid var(--muted);
-  border-bottom: 1.5px solid var(--muted);
+  border-right: 1.75px solid var(--accent);
+  border-bottom: 1.75px solid var(--accent);
   transform: translateY(-3px) rotate(45deg);
   transition: transform .18s ease;
 }
@@ -247,14 +234,14 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
 .group:first-child > summary { padding-top: 0; }
 .group > summary::-webkit-details-marker { display: none; }
 .group > summary h3 { margin: 0; }
-.group > summary .count { text-align: right; font-family: var(--sc); color: var(--muted); font-size: .9375rem; }
+.group > summary .count { text-align: right; font-family: var(--sc); color: var(--accent); font-weight: 600; font-size: .9375rem; }
 .group > summary:hover h3 { color: var(--ink); }
 .group > .entries { padding: .35rem 0 1.4rem; }
 
 .pub { margin-bottom: 1.3rem; }
 .pub .m span { display: block; }
 .key { font-family: var(--sc); color: var(--muted); font-size: .875rem; }
-.venue { color: var(--ink); font-weight: 500; }
+.venue { color: var(--accent-deep); font-weight: 600; }
 .award { color: var(--award); font-style: italic; }
 .title { font-weight: 600; color: var(--ink); text-decoration: none; }
 .title:hover { color: var(--accent); text-decoration: underline; text-decoration-color: currentColor; }
@@ -387,7 +374,7 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
         <ul class="contact">
           <li><a href="mailto:haoxuanzhang@my.unt.edu">haoxuanzhang@my.unt.edu</a></li>
           <li><a href="https://scholar.google.com/citations?user=CfTZrTcAAAAJ&amp;hl=en">Google Scholar</a></li>
-          <li><a href="https://github.com/zhanghaoxuan1999">GitHub</a></li>
+          <li><a href="https://openreview.net/profile?id=%7EHaoxuan_Zhang3">OpenReview</a></li>
         </ul>
       </div>
 
