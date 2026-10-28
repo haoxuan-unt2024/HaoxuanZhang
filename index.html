@@ -151,7 +151,7 @@ p { margin: 0; }
   font: inherit; font-size: .9063rem;
   color: var(--accent);
   background: none; border: 0; padding: .2rem 0;
-  cursor: pointer;
+  cursor: var(--cursor-link);
 }
 .text-btn:hover { text-decoration: underline; text-underline-offset: .2em; }
 
@@ -164,7 +164,7 @@ p { margin: 0; }
 .card > summary {
   display: flex; align-items: baseline; gap: 1.1rem;
   padding: 1.05rem var(--pad);
-  cursor: pointer;
+  cursor: var(--cursor-link);
   list-style: none;
   border-radius: 12px;
 }
@@ -221,34 +221,52 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
 }
 .card-body > h3:first-child { margin-top: 0; }
 
-/* Publication groups (nested folds) */
-.group { border-top: 1px solid var(--rule); }
-.group > summary {
-  display: grid;
-  grid-template-columns: var(--g) minmax(0, 1fr) auto;
-  column-gap: var(--gap);
-  align-items: baseline;
-  padding: .75rem 0;
-  cursor: pointer; list-style: none;
+/* ---------- Publications: filter + one card per paper ---------- */
+.pubs { margin: 1.9rem 0 1.9rem; }
+.pubs-head {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: .15rem 1.1rem;
+  padding: 0 var(--pad);
+  margin-bottom: .85rem;
 }
-.group > summary::-webkit-details-marker { display: none; }
-.card-body .theme-name {
-  margin: 0 0 1rem calc(var(--g) + var(--gap));
-  font-family: var(--sc); font-style: normal; font-weight: 600;
-  font-size: 1.1875rem; letter-spacing: .015em;
+.pubs-head h2 {
+  margin: 0;
+  font-family: var(--sc); font-weight: 600;
+  font-size: 1.3rem; line-height: 1.25; letter-spacing: .015em;
   color: var(--accent-deep);
 }
-.group > summary h4 { margin: 0; font-size: 1.0625rem; font-weight: 600; color: var(--ink); }
-.group > summary h4 { grid-column: 2; }
-.group > summary .chev { grid-column: 3; }
-.group > summary .n { margin-left: .65rem; font-weight: 400; font-size: .9375rem; color: var(--muted); }
-.group > summary:hover h4 { color: var(--accent-deep); }
-.group > .entries { padding: .35rem 0 1.4rem; }
+.pubs-theme { color: var(--muted); font-size: .9375rem; }
+.filter { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 var(--pad); margin-bottom: 1rem; }
+.filter button {
+  font: inherit; font-size: .9375rem;
+  padding: .28rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--card);
+  color: var(--ink);
+  cursor: var(--cursor-link);
+}
+.filter button:hover { border-color: var(--accent); }
+.filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-.pub { margin-bottom: 1.3rem; }
-.pub .m span { display: block; }
-.venue { color: var(--accent-deep); font-weight: 600; }
-.award { color: var(--award); font-style: italic; }
+.papers { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.paper {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1rem var(--pad) 1.05rem;
+}
+.paper-meta {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: .1rem .9rem;
+  font-size: .875rem;
+  margin-bottom: .3rem;
+}
+.paper-meta .venue { color: var(--accent-deep); font-weight: 600; }
+.paper-meta .award { color: var(--award); font-weight: 600; font-style: italic; }
+.paper-meta .tag { margin-left: auto; color: var(--muted); }
+.pubs:not([data-filter="all"]) .paper-meta .tag { display: none; }
+
 .title { font-weight: 600; color: var(--ink); text-decoration: none; }
 .title:hover { color: var(--accent); text-decoration: underline; text-decoration-color: currentColor; }
 .authors { font-size: .9688rem; }
@@ -261,7 +279,7 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
 .links a, .bib-btn {
   font: inherit; color: var(--accent);
   background: none; border: 0; padding: 0;
-  text-decoration: none; cursor: pointer;
+  text-decoration: none; cursor: var(--cursor-link);
 }
 .links a::before, .bib-btn::before { content: "["; color: var(--faint); }
 .links a::after, .bib-btn::after { content: "]"; color: var(--faint); }
@@ -280,13 +298,23 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
   font-family: var(--serif); font-size: .8125rem;
   color: var(--accent); background: var(--card);
   border: 1px solid var(--rule); border-radius: 4px;
-  padding: .05rem .55rem; cursor: pointer;
+  padding: .05rem .55rem; cursor: var(--cursor-link);
 }
 .copy:hover { border-color: var(--accent); }
 
 /* ---------- Footer ---------- */
 .foot { margin-top: 2.5rem; padding-left: calc(var(--pad) + var(--g) + var(--gap)); color: var(--muted); font-size: .875rem; }
 .visitors { margin-top: 1.25rem; max-width: 260px; }
+
+/* ---------- Custom cursors ---------- */
+:root {
+  --cursor-arrow: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2230%22 height=%2230%22 viewBox=%220 0 26 26%22%3E%3Cpath d=%22M4 3 L22 11.2 L13.6 13.6 L10.6 22 Z%22 fill=%22%23008542%22 stroke=%22%23fff%22 stroke-width=%221.8%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E") 5 3, auto;
+  --cursor-link: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2211%22 fill=%22%23008542%22 fill-opacity=%22.16%22 stroke=%22%23fff%22 stroke-width=%224%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2211%22 fill=%22none%22 stroke=%22%23008542%22 stroke-width=%222%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%223%22 fill=%22%23008542%22 stroke=%22%23fff%22 stroke-width=%221.5%22/%3E%3C/svg%3E") 16 16, pointer;
+  --cursor-text: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M12 5v14M8.5 4.5h7M8.5 19.5h7%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%224.2%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M12 5v14M8.5 4.5h7M8.5 19.5h7%22 fill=%22none%22 stroke=%22%23008542%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E%3C/svg%3E") 12 12, text;
+}
+html { cursor: var(--cursor-arrow); }
+.bio p, .role, .authors, .where, .entry p, .sub, .lead, .pubs-theme, .paper-meta, .bib pre { cursor: var(--cursor-text); }
+a, button, summary, .bib-btn, .copy { cursor: var(--cursor-link); }
 
 @media (prefers-reduced-motion: reduce) {
   .chev { transition: none; }
@@ -327,13 +355,9 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
   .chev { margin-left: auto; }
 
   .entry { grid-template-columns: minmax(0, 1fr); margin-bottom: 1.05rem; }
+  .paper-meta .tag { margin-left: 0; }
   .m { text-align: left; padding-top: 0; margin-bottom: .1rem; }
-  .pub .m { display: flex; flex-wrap: wrap; gap: 0 .6rem; align-items: baseline; }
-  .pub .m span { display: inline; }
-  .indent, .card-body .theme-name { margin-left: 0; }
-  .group > summary { grid-template-columns: minmax(0, 1fr) auto; }
-  .group > summary h4 { grid-column: 1; }
-  .group > summary .chev { grid-column: 2; }
+  .indent { margin-left: 0; }
   .foot { padding-left: var(--pad); }
 }
 
@@ -386,7 +410,7 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
 
       <div class="bio">
         <p class="lede">I study how knowledge is produced and evaluated in the AI era.</p>
-        <p>Research output increasingly takes the form of AI models and datasets, and large language models increasingly write the summaries and reviews that science relies on. My work addresses two questions this raises. <a href="#pubs-documentation">AI documentation</a> asks how this knowledge is recorded: I build benchmarks and methods for generating model and data cards that state what a model or dataset is, how it was built, and where it falls short. <a href="#pubs-evaluation">Knowledge evaluation</a> asks how its quality is judged: I measure novelty and breakthrough innovation in science and test whether LLM-generated reviews and summaries can be trusted. The two depend on each other. Without documentation, AI work cannot be evaluated, compared, or reused; and documentation written by LLMs is itself knowledge that has to be evaluated.</p>
+        <p>Research output increasingly takes the form of AI models and datasets, and large language models increasingly write the summaries and reviews that science relies on. My work addresses two questions this raises. <a href="#publications" data-filter="documentation">AI documentation</a> asks how this knowledge is recorded: I build benchmarks and methods for generating model and data cards that state what a model or dataset is, how it was built, and where it falls short. <a href="#publications" data-filter="evaluation">Knowledge evaluation</a> asks how its quality is judged: I measure novelty and breakthrough innovation in science and test whether LLM-generated reviews and summaries can be trusted. The two depend on each other. Without documentation, AI work cannot be evaluated, compared, or reused; and documentation written by LLMs is itself knowledge that has to be evaluated.</p>
         <p>I am a member of the <a href="https://www.idealab-coi.com">Intelligent Data Engineering and Analytics (IDEA) Lab</a>, advised by Prof. Haihua Chen, Prof. Ting Xiao, and Prof. Yang Zhang.</p>
       </div>
     </section>
@@ -410,246 +434,215 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
       </details>
 
       <!-- ===================== Publications ===================== -->
-      <details class="card" id="publications" open>
-        <summary><h2>Publications</h2><span class="sum">13 papers on knowledge production and evaluation in the AI era</span><span class="chev" aria-hidden="true"></span></summary>
-        <div class="card-body">
-          <h3 class="theme-name">Knowledge production and evaluation in the AI era</h3>
-
-          <details class="group" id="pubs-documentation" open>
-            <summary><h4>AI documentation<span class="n">2 papers</span></h4><span class="chev" aria-hidden="true"></span></summary>
-            <ol class="entries">
-
-              <li class="entry pub" id="C2">
-                <div class="m"><span class="venue">EMNLP 2026 Findings</span></div>
-                <div>
-                  <a class="title" href="https://aclanthology.org/2026.findings-emnlp.1641/">MetaGAI: A large-scale and high-quality benchmark for generative AI model and data card generation</a>
-                  <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Zhang, Y., Liang, Z., Ding, J., Xiao, T., &amp; Chen, H.</p>
-                  <p class="where">In <i>Findings of the Association for Computational Linguistics: EMNLP 2026</i> (pp. 34910–34931). <span class="links"><a href="https://aclanthology.org/2026.findings-emnlp.1641/">ACL Anthology</a> <a href="https://arxiv.org/abs/2604.23539">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C2">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C2" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{zhang2026metagai,
-  title     = {{MetaGAI}: A Large-Scale and High-Quality Benchmark for Generative {AI} Model and Data Card Generation},
-  author    = {Zhang, H. and Li, R. and Zhang, Y. and Liang, Z. and Ding, J. and Xiao, T. and Chen, H.},
-  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
-  pages     = {34910--34931},
-  year      = {2026},
-  url       = {https://aclanthology.org/2026.findings-emnlp.1641/}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="C4">
-                <div class="m"><span class="venue">WWW 2026</span></div>
-                <div>
-                  <a class="title" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792685">AdaQE-CG: Adaptive query expansion for web-scale generative AI model and data card generation</a>
-                  <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Liang, Z., Sattari, M., Vo, P., Qu, C., Xiao, T., Ding, J., Zhang, Y., &amp; Chen, H.</p>
-                  <p class="where">In <i>Proceedings of The Web Conference (WWW 2026)</i>. <span class="links"><a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792685">ACM DL</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C4">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C4" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{zhang2026adaqecg,
-  title     = {{AdaQE-CG}: Adaptive Query Expansion for Web-Scale Generative {AI} Model and Data Card Generation},
-  author    = {Zhang, H. and Li, R. and Liang, Z. and Sattari, M. and Vo, P. and Qu, C. and Xiao, T. and Ding, J. and Zhang, Y. and Chen, H.},
-  booktitle = {Proceedings of The Web Conference (WWW 2026)},
-  year      = {2026},
-  doi       = {10.1145/3774904.3792685}
-}</pre></div>
-                </div>
-              </li>
-            </ol>
-          </details>
-
-          <details class="group" id="pubs-evaluation" open>
-            <summary><h4>Knowledge evaluation<span class="n">11 papers</span></h4><span class="chev" aria-hidden="true"></span></summary>
-            <ol class="entries">
-
-              <li class="entry pub" id="C1">
-                <div class="m"><span class="venue">NeurIPS 2026</span></div>
-                <div>
-                  <a class="title" href="https://openreview.net/forum?id=pXhvOZB8Qw">TopoGraphRAG-Bench: Evaluating multimodal GraphRAG on layout-grounded evidence reasoning</a>
-                  <p class="authors">Li, R., Lin, J., <span class="me">Zhang, H.</span>, Chen, H., Ding, J., Gehringer, E., &amp; Zhang, Y.</p>
-                  <p class="where">In <i>Advances in Neural Information Processing Systems (NeurIPS 2026)</i>, Evaluations and Datasets Track. <span class="links"><a href="https://openreview.net/forum?id=pXhvOZB8Qw">OpenReview</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C1">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C1" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{li2026topographrag,
-  title     = {{TopoGraphRAG-Bench}: Evaluating Multimodal {GraphRAG} on Layout-Grounded Evidence Reasoning},
-  author    = {Li, R. and Lin, J. and Zhang, H. and Chen, H. and Ding, J. and Gehringer, E. and Zhang, Y.},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track},
-  year      = {2026},
-  url       = {https://openreview.net/forum?id=pXhvOZB8Qw}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="C3">
-                <div class="m"><span class="venue">EMNLP 2026 Findings</span></div>
-                <div>
-                  <a class="title" href="https://aclanthology.org/2026.findings-emnlp.1645/">Puzzles to paradigms: A survey of human–agent collaboration in scientific innovation</a>
-                  <p class="authors">Liang, Z., <span class="me">Zhang, H.</span>, Chen, H., Xiao, T., Ding, J., &amp; Zhang, Y.</p>
-                  <p class="where">In <i>Findings of the Association for Computational Linguistics: EMNLP 2026</i> (pp. 35017–35041). <span class="links"><a href="https://aclanthology.org/2026.findings-emnlp.1645/">ACL Anthology</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C3">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C3" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{liang2026puzzles,
-  title     = {Puzzles to Paradigms: A Survey of Human--Agent Collaboration in Scientific Innovation},
-  author    = {Liang, Z. and Zhang, H. and Chen, H. and Xiao, T. and Ding, J. and Zhang, Y.},
-  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
-  pages     = {35017--35041},
-  year      = {2026},
-  url       = {https://aclanthology.org/2026.findings-emnlp.1645/}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="C5">
-                <div class="m"><span class="venue">AITest 2026</span></div>
-                <div>
-                  <a class="title" href="https://arxiv.org/abs/2604.25130">LongSumEval: Question-answering based evaluation and feedback-driven refinement for long document summarization</a>
-                  <p class="authors">Nguyen, H., <span class="me">Zhang, H.</span>, Zhang, Y., Ding, J., &amp; Chen, H.</p>
-                  <p class="where">In <i>Proceedings of the 8th IEEE International Conference on Artificial Intelligence Testing (AITest 2026)</i>. <span class="links"><a href="https://arxiv.org/abs/2604.25130">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C5">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C5" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{nguyen2026longsumeval,
-  title     = {{LongSumEval}: Question-Answering Based Evaluation and Feedback-Driven Refinement for Long Document Summarization},
-  author    = {Nguyen, H. and Zhang, H. and Zhang, Y. and Ding, J. and Chen, H.},
-  booktitle = {Proceedings of the 8th IEEE International Conference on Artificial Intelligence Testing (AITest 2026)},
-  year      = {2026},
-  url       = {https://arxiv.org/abs/2604.25130}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="C6">
-                <div class="m"><span class="venue">BigDataService 2026</span></div>
-                <div>
-                  <a class="title" href="https://doi.org/10.1109/BigDataService70481.2026.00012">LLM-ReSum: A framework for LLM reflective summarization through self-evaluation</a>
-                  <p class="authors">Nguyen, H., <span class="me">Zhang, H.</span>, Zhang, Y., Chen, H., &amp; Ding, J.</p>
-                  <p class="where">In <i>Proceedings of the IEEE 12th International Conference on Big Data Computing Service and Machine Learning Applications (BigDataService 2026)</i>. <span class="links"><a href="https://doi.org/10.1109/BigDataService70481.2026.00012">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C6">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C6" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{nguyen2026llmresum,
-  title     = {{LLM-ReSum}: A Framework for {LLM} Reflective Summarization through Self-Evaluation},
-  author    = {Nguyen, H. and Zhang, H. and Zhang, Y. and Chen, H. and Ding, J.},
-  booktitle = {Proceedings of the IEEE 12th International Conference on Big Data Computing Service and Machine Learning Applications (BigDataService 2026)},
-  year      = {2026},
-  doi       = {10.1109/BigDataService70481.2026.00012}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="C7">
-                <div class="m"><span class="venue">JCDL 2025</span></div>
-                <div>
-                  <a class="title" href="https://arxiv.org/abs/2510.16549">ReviewGuard: Enhancing deficient peer review detection via LLM-driven data augmentation</a>
-                  <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Xiao, T., Ding, J., &amp; Chen, H.</p>
-                  <p class="where">In <i>Proceedings of the ACM/IEEE Joint Conference on Digital Libraries (JCDL 2025)</i>. <span class="links"><a href="https://arxiv.org/abs/2510.16549">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C7">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C7" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{zhang2025reviewguard,
-  title     = {{ReviewGuard}: Enhancing Deficient Peer Review Detection via {LLM}-Driven Data Augmentation},
-  author    = {Zhang, H. and Li, R. and Xiao, T. and Ding, J. and Chen, H.},
-  booktitle = {Proceedings of the ACM/IEEE Joint Conference on Digital Libraries (JCDL 2025)},
-  year      = {2025},
-  url       = {https://arxiv.org/abs/2510.16549}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="C8">
-                <div class="m"><span class="venue">ICDM 2025</span><span class="award">Best Poster Paper</span></div>
-                <div>
-                  <a class="title" href="https://arxiv.org/abs/2509.19326">Unveiling the merits and defects of LLMs in automatic review generation for scientific papers</a>
-                  <p class="authors">Li, R., <span class="me">Zhang, H.</span>, Xiao, T., Ding, J., &amp; Chen, H.</p>
-                  <p class="where">In <i>Proceedings of the IEEE International Conference on Data Mining (ICDM 2025)</i>. <span class="links"><a href="https://arxiv.org/abs/2509.19326">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C8">BibTeX</button></span></p>
-                  <div class="bib" id="bib-C8" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{li2025unveiling,
-  title     = {Unveiling the Merits and Defects of {LLMs} in Automatic Review Generation for Scientific Papers},
-  author    = {Li, R. and Zhang, H. and Xiao, T. and Ding, J. and Chen, H.},
-  booktitle = {Proceedings of the IEEE International Conference on Data Mining (ICDM 2025)},
-  year      = {2025},
-  url       = {https://arxiv.org/abs/2509.19326}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="J1">
-                <div class="m"><span class="venue">IP&amp;M 2025</span></div>
-                <div>
-                  <a class="title" href="https://doi.org/10.1016/j.ipm.2025.104121">IBID-CCT: A novel model for interdisciplinary breakthrough innovation detection based on the cusp catastrophe theory</a>
-                  <p class="authors">Wang, Z., Wang, N., <span class="me">Zhang, H.</span>, Wang, Z., Wang, Z., Ding, J., &amp; Chen, H.</p>
-                  <p class="where"><i>Information Processing &amp; Management</i>, <i>62</i>(4), 104121. <span class="links"><a href="https://doi.org/10.1016/j.ipm.2025.104121">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J1">BibTeX</button></span></p>
-                  <div class="bib" id="bib-J1" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2025ibidcct,
-  title   = {{IBID-CCT}: A Novel Model for Interdisciplinary Breakthrough Innovation Detection Based on the Cusp Catastrophe Theory},
-  author  = {Wang, Z. and Wang, N. and Zhang, H. and Wang, Z. and Wang, Z. and Ding, J. and Chen, H.},
-  journal = {Information Processing \&amp; Management},
-  volume  = {62},
-  number  = {4},
-  pages   = {104121},
-  year    = {2025},
-  doi     = {10.1016/j.ipm.2025.104121}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="P1">
-                <div class="m"><span class="venue">arXiv 2025</span></div>
-                <div>
-                  <a class="title" href="https://arxiv.org/abs/2507.11810">The evolving role of large language models in scientific innovation: Evaluator, collaborator, and scientist</a>
-                  <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Zhang, Y., Xiao, T., Chen, J., Ding, J., &amp; Chen, H.</p>
-                  <p class="where"><i>arXiv preprint</i> arXiv:2507.11810. <span class="links"><a href="https://arxiv.org/abs/2507.11810">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-P1">BibTeX</button></span></p>
-                  <div class="bib" id="bib-P1" hidden><button class="copy" type="button">Copy</button><pre>@misc{zhang2025evolving,
-  title         = {The Evolving Role of Large Language Models in Scientific Innovation: Evaluator, Collaborator, and Scientist},
-  author        = {Zhang, H. and Li, R. and Zhang, Y. and Xiao, T. and Chen, J. and Ding, J. and Chen, H.},
-  year          = {2025},
-  eprint        = {2507.11810},
-  archivePrefix = {arXiv}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="J2">
-                <div class="m"><span class="venue">J. Informetrics 2024</span></div>
-                <div>
-                  <a class="title" href="https://doi.org/10.1016/j.joi.2024.101587">An effective framework for measuring the novelty of scientific articles through integrated topic modeling and cloud model</a>
-                  <p class="authors">Wang, Z., <span class="me">Zhang, H.</span>, Chen, J., &amp; Chen, H.</p>
-                  <p class="where"><i>Journal of Informetrics</i>, <i>18</i>(4), 101587. <span class="links"><a href="https://doi.org/10.1016/j.joi.2024.101587">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J2">BibTeX</button></span></p>
-                  <div class="bib" id="bib-J2" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2024novelty,
-  title   = {An Effective Framework for Measuring the Novelty of Scientific Articles through Integrated Topic Modeling and Cloud Model},
-  author  = {Wang, Z. and Zhang, H. and Chen, J. and Chen, H.},
-  journal = {Journal of Informetrics},
-  volume  = {18},
-  number  = {4},
-  pages   = {101587},
-  year    = {2024},
-  doi     = {10.1016/j.joi.2024.101587}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="J3">
-                <div class="m"><span class="venue">JKSU-CIS 2024</span></div>
-                <div>
-                  <a class="title" href="https://doi.org/10.1016/j.jksuci.2024.102119">Content-based quality evaluation of scientific papers using coarse feature and knowledge entity network</a>
-                  <p class="authors">Wang, Z., <span class="me">Zhang, H.</span>, Chen, H., Feng, Y., &amp; Ding, J.</p>
-                  <p class="where"><i>Journal of King Saud University – Computer and Information Sciences</i>, <i>36</i>(6), 102119. <span class="links"><a href="https://doi.org/10.1016/j.jksuci.2024.102119">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J3">BibTeX</button></span></p>
-                  <div class="bib" id="bib-J3" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2024quality,
-  title   = {Content-Based Quality Evaluation of Scientific Papers Using Coarse Feature and Knowledge Entity Network},
-  author  = {Wang, Z. and Zhang, H. and Chen, H. and Feng, Y. and Ding, J.},
-  journal = {Journal of King Saud University -- Computer and Information Sciences},
-  volume  = {36},
-  number  = {6},
-  pages   = {102119},
-  year    = {2024},
-  doi     = {10.1016/j.jksuci.2024.102119}
-}</pre></div>
-                </div>
-              </li>
-
-              <li class="entry pub" id="J4">
-                <div class="m"><span class="venue">Electron. Libr. 2024</span></div>
-                <div>
-                  <a class="title" href="https://doi.org/10.1108/el-06-2023-0141">Exploring and evaluating the index for interdisciplinary breakthrough innovation detection</a>
-                  <p class="authors">Wang, Z., Qiao, X., Chen, J., Li, L., <span class="me">Zhang, H.</span>, Ding, J., &amp; Chen, H.</p>
-                  <p class="where"><i>The Electronic Library</i>, <i>42</i>(4), 536–552. <span class="links"><a href="https://doi.org/10.1108/el-06-2023-0141">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J4">BibTeX</button></span></p>
-                  <div class="bib" id="bib-J4" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2024index,
-  title   = {Exploring and Evaluating the Index for Interdisciplinary Breakthrough Innovation Detection},
-  author  = {Wang, Z. and Qiao, X. and Chen, J. and Li, L. and Zhang, H. and Ding, J. and Chen, H.},
-  journal = {The Electronic Library},
-  volume  = {42},
-  number  = {4},
-  pages   = {536--552},
-  year    = {2024},
-  doi     = {10.1108/EL-06-2023-0141}
-}</pre></div>
-                </div>
-              </li>
-            </ol>
-          </details>
+      <section class="pubs" id="publications" data-filter="all" aria-labelledby="h-pubs">
+        <div class="pubs-head">
+          <h2 id="h-pubs">Publications</h2>
+          <p class="pubs-theme">Knowledge production and evaluation in the AI era</p>
         </div>
-      </details>
+        <div class="filter" role="group" aria-label="Filter publications by theme">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="documentation" aria-pressed="false">AI documentation</button>
+          <button type="button" data-filter="evaluation" aria-pressed="false">Knowledge evaluation</button>
+        </div>
+        <ol class="papers">
+
+          <li class="paper" id="C1" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">NeurIPS 2026</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://openreview.net/forum?id=pXhvOZB8Qw">TopoGraphRAG-Bench: Evaluating multimodal GraphRAG on layout-grounded evidence reasoning</a>
+                <p class="authors">Li, R., Lin, J., <span class="me">Zhang, H.</span>, Chen, H., Ding, J., Gehringer, E., &amp; Zhang, Y.</p>
+                <p class="where">In <i>Advances in Neural Information Processing Systems (NeurIPS 2026)</i>, Evaluations and Datasets Track. <span class="links"><a href="https://openreview.net/forum?id=pXhvOZB8Qw">OpenReview</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C1">BibTeX</button></span></p>
+                <div class="bib" id="bib-C1" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{li2026topographrag,
+title     = {{TopoGraphRAG-Bench}: Evaluating Multimodal {GraphRAG} on Layout-Grounded Evidence Reasoning},
+author    = {Li, R. and Lin, J. and Zhang, H. and Chen, H. and Ding, J. and Gehringer, E. and Zhang, Y.},
+booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track},
+year      = {2026},
+url       = {https://openreview.net/forum?id=pXhvOZB8Qw}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="C2" data-theme="documentation">
+            <p class="paper-meta"><span class="venue">EMNLP 2026 Findings</span><span class="tag">AI documentation</span></p>
+                <a class="title" href="https://aclanthology.org/2026.findings-emnlp.1641/">MetaGAI: A large-scale and high-quality benchmark for generative AI model and data card generation</a>
+                <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Zhang, Y., Liang, Z., Ding, J., Xiao, T., &amp; Chen, H.</p>
+                <p class="where">In <i>Findings of the Association for Computational Linguistics: EMNLP 2026</i> (pp. 34910–34931). <span class="links"><a href="https://aclanthology.org/2026.findings-emnlp.1641/">ACL Anthology</a> <a href="https://arxiv.org/abs/2604.23539">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C2">BibTeX</button></span></p>
+                <div class="bib" id="bib-C2" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{zhang2026metagai,
+title     = {{MetaGAI}: A Large-Scale and High-Quality Benchmark for Generative {AI} Model and Data Card Generation},
+author    = {Zhang, H. and Li, R. and Zhang, Y. and Liang, Z. and Ding, J. and Xiao, T. and Chen, H.},
+booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
+pages     = {34910--34931},
+year      = {2026},
+url       = {https://aclanthology.org/2026.findings-emnlp.1641/}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="C3" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">EMNLP 2026 Findings</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://aclanthology.org/2026.findings-emnlp.1645/">Puzzles to paradigms: A survey of human–agent collaboration in scientific innovation</a>
+                <p class="authors">Liang, Z., <span class="me">Zhang, H.</span>, Chen, H., Xiao, T., Ding, J., &amp; Zhang, Y.</p>
+                <p class="where">In <i>Findings of the Association for Computational Linguistics: EMNLP 2026</i> (pp. 35017–35041). <span class="links"><a href="https://aclanthology.org/2026.findings-emnlp.1645/">ACL Anthology</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C3">BibTeX</button></span></p>
+                <div class="bib" id="bib-C3" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{liang2026puzzles,
+title     = {Puzzles to Paradigms: A Survey of Human--Agent Collaboration in Scientific Innovation},
+author    = {Liang, Z. and Zhang, H. and Chen, H. and Xiao, T. and Ding, J. and Zhang, Y.},
+booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
+pages     = {35017--35041},
+year      = {2026},
+url       = {https://aclanthology.org/2026.findings-emnlp.1645/}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="C4" data-theme="documentation">
+            <p class="paper-meta"><span class="venue">WWW 2026</span><span class="tag">AI documentation</span></p>
+                <a class="title" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792685">AdaQE-CG: Adaptive query expansion for web-scale generative AI model and data card generation</a>
+                <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Liang, Z., Sattari, M., Vo, P., Qu, C., Xiao, T., Ding, J., Zhang, Y., &amp; Chen, H.</p>
+                <p class="where">In <i>Proceedings of The Web Conference (WWW 2026)</i>. <span class="links"><a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792685">ACM DL</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C4">BibTeX</button></span></p>
+                <div class="bib" id="bib-C4" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{zhang2026adaqecg,
+title     = {{AdaQE-CG}: Adaptive Query Expansion for Web-Scale Generative {AI} Model and Data Card Generation},
+author    = {Zhang, H. and Li, R. and Liang, Z. and Sattari, M. and Vo, P. and Qu, C. and Xiao, T. and Ding, J. and Zhang, Y. and Chen, H.},
+booktitle = {Proceedings of The Web Conference (WWW 2026)},
+year      = {2026},
+doi       = {10.1145/3774904.3792685}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="C5" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">AITest 2026</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://arxiv.org/abs/2604.25130">LongSumEval: Question-answering based evaluation and feedback-driven refinement for long document summarization</a>
+                <p class="authors">Nguyen, H., <span class="me">Zhang, H.</span>, Zhang, Y., Ding, J., &amp; Chen, H.</p>
+                <p class="where">In <i>Proceedings of the 8th IEEE International Conference on Artificial Intelligence Testing (AITest 2026)</i>. <span class="links"><a href="https://arxiv.org/abs/2604.25130">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C5">BibTeX</button></span></p>
+                <div class="bib" id="bib-C5" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{nguyen2026longsumeval,
+title     = {{LongSumEval}: Question-Answering Based Evaluation and Feedback-Driven Refinement for Long Document Summarization},
+author    = {Nguyen, H. and Zhang, H. and Zhang, Y. and Ding, J. and Chen, H.},
+booktitle = {Proceedings of the 8th IEEE International Conference on Artificial Intelligence Testing (AITest 2026)},
+year      = {2026},
+url       = {https://arxiv.org/abs/2604.25130}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="C6" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">BigDataService 2026</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://doi.org/10.1109/BigDataService70481.2026.00012">LLM-ReSum: A framework for LLM reflective summarization through self-evaluation</a>
+                <p class="authors">Nguyen, H., <span class="me">Zhang, H.</span>, Zhang, Y., Chen, H., &amp; Ding, J.</p>
+                <p class="where">In <i>Proceedings of the IEEE 12th International Conference on Big Data Computing Service and Machine Learning Applications (BigDataService 2026)</i>. <span class="links"><a href="https://doi.org/10.1109/BigDataService70481.2026.00012">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C6">BibTeX</button></span></p>
+                <div class="bib" id="bib-C6" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{nguyen2026llmresum,
+title     = {{LLM-ReSum}: A Framework for {LLM} Reflective Summarization through Self-Evaluation},
+author    = {Nguyen, H. and Zhang, H. and Zhang, Y. and Chen, H. and Ding, J.},
+booktitle = {Proceedings of the IEEE 12th International Conference on Big Data Computing Service and Machine Learning Applications (BigDataService 2026)},
+year      = {2026},
+doi       = {10.1109/BigDataService70481.2026.00012}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="C7" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">JCDL 2025</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://arxiv.org/abs/2510.16549">ReviewGuard: Enhancing deficient peer review detection via LLM-driven data augmentation</a>
+                <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Xiao, T., Ding, J., &amp; Chen, H.</p>
+                <p class="where">In <i>Proceedings of the ACM/IEEE Joint Conference on Digital Libraries (JCDL 2025)</i>. <span class="links"><a href="https://arxiv.org/abs/2510.16549">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C7">BibTeX</button></span></p>
+                <div class="bib" id="bib-C7" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{zhang2025reviewguard,
+title     = {{ReviewGuard}: Enhancing Deficient Peer Review Detection via {LLM}-Driven Data Augmentation},
+author    = {Zhang, H. and Li, R. and Xiao, T. and Ding, J. and Chen, H.},
+booktitle = {Proceedings of the ACM/IEEE Joint Conference on Digital Libraries (JCDL 2025)},
+year      = {2025},
+url       = {https://arxiv.org/abs/2510.16549}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="C8" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">ICDM 2025</span><span class="award">Best Poster Paper</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://arxiv.org/abs/2509.19326">Unveiling the merits and defects of LLMs in automatic review generation for scientific papers</a>
+                <p class="authors">Li, R., <span class="me">Zhang, H.</span>, Xiao, T., Ding, J., &amp; Chen, H.</p>
+                <p class="where">In <i>Proceedings of the IEEE International Conference on Data Mining (ICDM 2025)</i>. <span class="links"><a href="https://arxiv.org/abs/2509.19326">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-C8">BibTeX</button></span></p>
+                <div class="bib" id="bib-C8" hidden><button class="copy" type="button">Copy</button><pre>@inproceedings{li2025unveiling,
+title     = {Unveiling the Merits and Defects of {LLMs} in Automatic Review Generation for Scientific Papers},
+author    = {Li, R. and Zhang, H. and Xiao, T. and Ding, J. and Chen, H.},
+booktitle = {Proceedings of the IEEE International Conference on Data Mining (ICDM 2025)},
+year      = {2025},
+url       = {https://arxiv.org/abs/2509.19326}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="J1" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">IP&amp;M 2025</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://doi.org/10.1016/j.ipm.2025.104121">IBID-CCT: A novel model for interdisciplinary breakthrough innovation detection based on the cusp catastrophe theory</a>
+                <p class="authors">Wang, Z., Wang, N., <span class="me">Zhang, H.</span>, Wang, Z., Wang, Z., Ding, J., &amp; Chen, H.</p>
+                <p class="where"><i>Information Processing &amp; Management</i>, <i>62</i>(4), 104121. <span class="links"><a href="https://doi.org/10.1016/j.ipm.2025.104121">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J1">BibTeX</button></span></p>
+                <div class="bib" id="bib-J1" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2025ibidcct,
+title   = {{IBID-CCT}: A Novel Model for Interdisciplinary Breakthrough Innovation Detection Based on the Cusp Catastrophe Theory},
+author  = {Wang, Z. and Wang, N. and Zhang, H. and Wang, Z. and Wang, Z. and Ding, J. and Chen, H.},
+journal = {Information Processing \&amp; Management},
+volume  = {62},
+number  = {4},
+pages   = {104121},
+year    = {2025},
+doi     = {10.1016/j.ipm.2025.104121}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="P1" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">arXiv 2025</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://arxiv.org/abs/2507.11810">The evolving role of large language models in scientific innovation: Evaluator, collaborator, and scientist</a>
+                <p class="authors"><span class="me">Zhang, H.</span>, Li, R., Zhang, Y., Xiao, T., Chen, J., Ding, J., &amp; Chen, H.</p>
+                <p class="where"><i>arXiv preprint</i> arXiv:2507.11810. <span class="links"><a href="https://arxiv.org/abs/2507.11810">arXiv</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-P1">BibTeX</button></span></p>
+                <div class="bib" id="bib-P1" hidden><button class="copy" type="button">Copy</button><pre>@misc{zhang2025evolving,
+title         = {The Evolving Role of Large Language Models in Scientific Innovation: Evaluator, Collaborator, and Scientist},
+author        = {Zhang, H. and Li, R. and Zhang, Y. and Xiao, T. and Chen, J. and Ding, J. and Chen, H.},
+year          = {2025},
+eprint        = {2507.11810},
+archivePrefix = {arXiv}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="J2" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">J. Informetrics 2024</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://doi.org/10.1016/j.joi.2024.101587">An effective framework for measuring the novelty of scientific articles through integrated topic modeling and cloud model</a>
+                <p class="authors">Wang, Z., <span class="me">Zhang, H.</span>, Chen, J., &amp; Chen, H.</p>
+                <p class="where"><i>Journal of Informetrics</i>, <i>18</i>(4), 101587. <span class="links"><a href="https://doi.org/10.1016/j.joi.2024.101587">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J2">BibTeX</button></span></p>
+                <div class="bib" id="bib-J2" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2024novelty,
+title   = {An Effective Framework for Measuring the Novelty of Scientific Articles through Integrated Topic Modeling and Cloud Model},
+author  = {Wang, Z. and Zhang, H. and Chen, J. and Chen, H.},
+journal = {Journal of Informetrics},
+volume  = {18},
+number  = {4},
+pages   = {101587},
+year    = {2024},
+doi     = {10.1016/j.joi.2024.101587}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="J3" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">JKSU-CIS 2024</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://doi.org/10.1016/j.jksuci.2024.102119">Content-based quality evaluation of scientific papers using coarse feature and knowledge entity network</a>
+                <p class="authors">Wang, Z., <span class="me">Zhang, H.</span>, Chen, H., Feng, Y., &amp; Ding, J.</p>
+                <p class="where"><i>Journal of King Saud University – Computer and Information Sciences</i>, <i>36</i>(6), 102119. <span class="links"><a href="https://doi.org/10.1016/j.jksuci.2024.102119">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J3">BibTeX</button></span></p>
+                <div class="bib" id="bib-J3" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2024quality,
+title   = {Content-Based Quality Evaluation of Scientific Papers Using Coarse Feature and Knowledge Entity Network},
+author  = {Wang, Z. and Zhang, H. and Chen, H. and Feng, Y. and Ding, J.},
+journal = {Journal of King Saud University -- Computer and Information Sciences},
+volume  = {36},
+number  = {6},
+pages   = {102119},
+year    = {2024},
+doi     = {10.1016/j.jksuci.2024.102119}
+}</pre></div>
+          </li>
+
+          <li class="paper" id="J4" data-theme="evaluation">
+            <p class="paper-meta"><span class="venue">Electron. Libr. 2024</span><span class="tag">Knowledge evaluation</span></p>
+                <a class="title" href="https://doi.org/10.1108/el-06-2023-0141">Exploring and evaluating the index for interdisciplinary breakthrough innovation detection</a>
+                <p class="authors">Wang, Z., Qiao, X., Chen, J., Li, L., <span class="me">Zhang, H.</span>, Ding, J., &amp; Chen, H.</p>
+                <p class="where"><i>The Electronic Library</i>, <i>42</i>(4), 536–552. <span class="links"><a href="https://doi.org/10.1108/el-06-2023-0141">DOI</a> <button class="bib-btn" type="button" aria-expanded="false" aria-controls="bib-J4">BibTeX</button></span></p>
+                <div class="bib" id="bib-J4" hidden><button class="copy" type="button">Copy</button><pre>@article{wang2024index,
+title   = {Exploring and Evaluating the Index for Interdisciplinary Breakthrough Innovation Detection},
+author  = {Wang, Z. and Qiao, X. and Chen, J. and Li, L. and Zhang, H. and Ding, J. and Chen, H.},
+journal = {The Electronic Library},
+volume  = {42},
+number  = {4},
+pages   = {536--552},
+year    = {2024},
+doi     = {10.1108/EL-06-2023-0141}
+}</pre></div>
+          </li>
+        </ol>
+      </section>
 
       <!-- ===================== Honors ===================== -->
       <details class="card" id="honors">
@@ -756,9 +749,23 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
       d = d.parentElement ? d.parentElement.closest('details') : null;
     }
   }
+  // Publication filter
+  var pubs = document.getElementById('publications');
+  var filterBtns = Array.prototype.slice.call(pubs.querySelectorAll('.filter button'));
+  var papers = Array.prototype.slice.call(pubs.querySelectorAll('.paper'));
+  function setFilter(f) {
+    pubs.setAttribute('data-filter', f);
+    filterBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-filter') === f)); });
+    papers.forEach(function (p) { p.hidden = !(f === 'all' || p.getAttribute('data-theme') === f); });
+  }
+  filterBtns.forEach(function (b) {
+    b.addEventListener('click', function () { setFilter(b.getAttribute('data-filter')); });
+  });
+
   function goTo(id, smooth) {
     var el = document.getElementById(id);
     if (!el) return false;
+    if (el.classList.contains('paper') && el.hidden) setFilter('all');
     openTo(el);
     el.scrollIntoView({ behavior: smooth && !reduceMotion ? 'smooth' : 'auto', block: 'start' });
     return true;
@@ -767,6 +774,8 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
     var a = e.target.closest('a[href^="#"]');
     if (!a) return;
     var id = a.getAttribute('href').slice(1);
+    var f = a.getAttribute('data-filter');
+    if (f) setFilter(f);
     if (goTo(id, true)) {
       e.preventDefault();
       history.replaceState(null, '', '#' + id);
@@ -789,7 +798,7 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
   });
   folds.forEach(function (d) { d.addEventListener('toggle', syncToggle); });
   syncToggle();
-  window.addEventListener('beforeprint', function () { folds.forEach(function (d) { d.open = true; }); });
+  window.addEventListener('beforeprint', function () { folds.forEach(function (d) { d.open = true; }); setFilter('all'); });
 
   // BibTeX toggles
   document.querySelectorAll('.bib-btn').forEach(function (btn) {
