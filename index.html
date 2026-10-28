@@ -239,7 +239,9 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
   color: var(--accent-deep);
 }
 .group > summary h4 { margin: 0; font-size: 1.0625rem; font-weight: 600; color: var(--ink); }
-.group > summary .count { text-align: right; font-family: var(--sc); color: var(--accent); font-weight: 600; font-size: .9375rem; }
+.group > summary h4 { grid-column: 2; }
+.group > summary .chev { grid-column: 3; }
+.group > summary .n { margin-left: .65rem; font-weight: 400; font-size: .9375rem; color: var(--muted); }
 .group > summary:hover h4 { color: var(--accent-deep); }
 .group > .entries { padding: .35rem 0 1.4rem; }
 
@@ -329,9 +331,9 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
   .pub .m { display: flex; flex-wrap: wrap; gap: 0 .6rem; align-items: baseline; }
   .pub .m span { display: inline; }
   .indent, .card-body .theme-name { margin-left: 0; }
-  .group > summary { grid-template-columns: minmax(0, 1fr) auto auto; }
-  .group > summary .count { order: 2; }
-  .group > summary .chev { order: 3; }
+  .group > summary { grid-template-columns: minmax(0, 1fr) auto; }
+  .group > summary h4 { grid-column: 1; }
+  .group > summary .chev { grid-column: 2; }
   .foot { padding-left: var(--pad); }
 }
 
@@ -414,7 +416,7 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
           <h3 class="theme-name">Knowledge production and evaluation in the AI era</h3>
 
           <details class="group" id="pubs-documentation" open>
-            <summary><span class="count">2</span><h4>AI documentation</h4><span class="chev" aria-hidden="true"></span></summary>
+            <summary><h4>AI documentation<span class="n">2 papers</span></h4><span class="chev" aria-hidden="true"></span></summary>
             <ol class="entries">
 
               <li class="entry pub" id="C2">
@@ -453,7 +455,7 @@ details[open] > summary > .chev { transform: translateY(2px) rotate(-135deg); bo
           </details>
 
           <details class="group" id="pubs-evaluation" open>
-            <summary><span class="count">11</span><h4>Knowledge evaluation</h4><span class="chev" aria-hidden="true"></span></summary>
+            <summary><h4>Knowledge evaluation<span class="n">11 papers</span></h4><span class="chev" aria-hidden="true"></span></summary>
             <ol class="entries">
 
               <li class="entry pub" id="C1">
